@@ -16,9 +16,9 @@ public class CreateCustomerItemCommandValidator:AbstractValidator<CreateCustomer
           .MaximumLength(20)
           .NotEmpty();
 
-        //RuleFor(v => v.DateOfBirth)
-        //.LessThanOrEqualTo(DateTime.Now)
-        //.NotEmpty();
+        RuleFor(v => v.DateOfBirth)
+        .LessThanOrEqualTo(DateTime.Now)
+        .NotEmpty();
 
         RuleFor(v => v.PhoneNumber)
          .MaximumLength(15)
