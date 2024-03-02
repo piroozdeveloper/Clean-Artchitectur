@@ -30,7 +30,7 @@ public class CreateCustomerItemTests : BaseTestFixture
             FirstName = "es",
 
             LastName = "hhh",
-           // DateOfBirth =DateTime.Now,
+           DateOfBirth =DateTime.Parse("20102/12/11"),
             PhoneNumber = "99999",
             Email = "a@gmail.com",
             BankAccountNumber =123233,
@@ -45,7 +45,7 @@ public class CreateCustomerItemTests : BaseTestFixture
         item!.CustomerId.Should().Be(command.CustomerId);
         item.FirstName.Should().Be(command.FirstName);
         item.LastName.Should().Be(command.LastName);
-       // item.DateOfBirth.Should().Be(command.DateOfBirth);
+        item.DateOfBirth.Should().Be(command.DateOfBirth);
         item.PhoneNumber.Should().Be(command.PhoneNumber);
         item.Email.Should().Be(command.Email);
         item.BankAccountNumber.Should().Be(command.BankAccountNumber);
