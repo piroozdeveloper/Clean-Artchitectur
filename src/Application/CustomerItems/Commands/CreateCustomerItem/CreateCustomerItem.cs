@@ -37,8 +37,8 @@ public class CreateCustomerItemCommandHandler : IRequestHandler<CreateCustomerIt
          .Select(x => x.BankAccountNumber == request.BankAccountNumber &&
          x.FirstName == request.FirstName && x.LastName == request.LastName).FirstOrDefaultAsync(cancellationToken);
 
-       // if (check == null)
-       // {
+        if (check == null)
+        {
 
             var entity = new Customer
             {
@@ -58,12 +58,12 @@ public class CreateCustomerItemCommandHandler : IRequestHandler<CreateCustomerIt
             await _context.SaveChangesAsync(cancellationToken);
 
             return entity.Id;
-        //}
+        }
 
-       // else
-        //{
-        //    return 0;
-       // }
+       else
+        {
+            return 0;
+        }
 
 
 
